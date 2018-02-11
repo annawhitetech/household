@@ -21,17 +21,40 @@
       font-family: "Special Elite";
       font-size: 15pt;
       line-height: 1.3;
+      transition: all 1s linear;
     }
     body {
+      -webkit-animation: AnimationName 30s linear infinite;
+-moz-animation: AnimationName 30s linear infinite;
+animation: AnimationName 30s linear infinite;
+
       background: url('mold.jpg');
     }
-    .light {
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    100%{background-position:50% 100% }
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    100%{background-position:50% 100%}
+}
+@keyframes AnimationName { 
+    0%{background-position:50% 0%}
+    100%{background-position:50% 100%}
+}
+    .light, .hatchet {
       background: rgba(255,255,255,1);
       opacity: .4;
       position: absolute;
       height: 100%;
       width: 100%;
       z-index: -1;
+    }
+
+    .hatchet {
+      background: url('hatch.png');
+      opacity: 1;
     }
     .demo {
       padding: 30px;
@@ -46,7 +69,6 @@
     }
 
     .image {
-      background: url('hatch.png');
       position: fixed;
       left: 0;
       min-width: 1000px;
@@ -58,7 +80,7 @@
 
     .ti-container {
       background: rgba(255,255,255,1);
-      padding: 3px;
+      padding: 3px 5px;
       display: inline-block;
     }
 
@@ -88,7 +110,9 @@
 
 <body>
 <div class="image">
+<div class="hatchet">
 
+</div> 
   <div class="light">
 
 </div>  <img src="bgtrans.gif"/>
@@ -100,14 +124,14 @@
 </div>
   <script type="text/javascript">
 
-
   var instance = new TypeIt('#element', {
   speed: 60,
   autoplay: true,
   loop: false,
   callback: function() { 
-    $('body').css('background-image', 'url(mold.jpg)');
-    $('.image').css('opacity', '.7');
+    $('.hatchet').css('opacity', '.1');
+    $('.light').css('opacity', '.1');
+    $('.ti-cursor').css('opacity', '0');
   }
 })/*
 .type('Our wallpaper, as of late, has fallen ill to a peculiar')
@@ -157,9 +181,12 @@
 .pause(100)
 .type('The only resolution is the complete removal of the walling from the household.')
 .pause(5000)
-.empty()
-.pause(100)
-.options({speed: 60})
+.empty()*/
+.pause(100);
+
+
+
+instance.options({speed: 60})
 .type('though holding no prior relevance, to gray infected textile sewn with off-red veinery, some type of 1950s vintage kit, receeding ventillation into oxidized spores, contributional spreading to the pulsing prior, mathematical geometries obscured by growing fungus, kansasesque gray covered in complete circles, incomplete circles swirling pulsing blue liquid serrating clensing absestos calloused over off-red poppy printed walling then resetting, relevant, reverent, rectangulant')
 .type(' reclusant, in response to touch, to peculiar pulsing priors, founded whirring electric wirelike liquid scalding through rusting pipery, as expected, as disconnected circutry, as leaking pusslike, as dirt, as water, as ditry water streaks darker on the walls, spores fleurish kansasesque and serrating, as of late, I\'ve been ')
 .empty()
@@ -204,7 +231,7 @@
 .type('..I..')
 .pause(50)
 .empty()
-.pause(2000)*/
+.pause(2000)
 .options({speed: 60})
 .type('Oh.')
 .pause(1000)
@@ -213,15 +240,6 @@
 .type(' It <em>spread</em>.');
 
   
-  function finish() {
-    var a;
-    a = instance.isComplete();
-    while(a == false) {
-    a = instance.isComplete();
-
-    }
-    alert("It's everywhere.");
-  }
 
 /*
 
