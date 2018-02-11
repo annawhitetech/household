@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
+  <script type="text/javascript" src="jquerytypewriter.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+    * {
+      padding: 0px;
+      margin: 0px;
+      font-family: "Special Elite";
+      font-size: 15pt;
+      line-height: 1.3;
+    }
+    body {
+      background: url('mold.jpg');
+    }
+    .light {
+      background: rgba(255,255,255,1);
+      opacity: .4;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+    .demo {
+      padding: 30px;
+      max-width: 650px;
+      margin-top: -200px;
+
+  text-shadow:
+   -1px -2px 0 #fff,  
+    1px -2px 0 #fff,
+    -1px 2px 0 #fff,
+     1px 2px 0 #fff;
+    }
+
+    .image {
+      background: url('hatch.png');
+      position: fixed;
+      left: 0;
+      min-width: 1000px;
+      top: 0;
+      max-width: 100%;
+      max-height: 100%;
+      transition: 1s linear all;
+    }
+
+    .ti-container {
+      background: rgba(255,255,255,1);
+      padding: 3px;
+      display: inline-block;
+    }
+
+    .image img {
+      width: 100%;
+      height: 100%;
+      border-bottom: 1000px solid white;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      color: black;
+      transition: 1s linear all;
+    }
+
+</style>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="image">
+
+  <div class="light">
+
+</div>  <img src="bgtrans.gif"/>
+
+</div>
+<div class="flex">
+  <div class="demo" id='element'>&shy;
+  </div>
+</div>
+  <script type="text/javascript">
+
+
+  var instance = new TypeIt('#element', {
+  speed: 60,
+  autoplay: true,
+  loop: false,
+  callback: function() { 
+    $('body').css('background-image', 'url(mold.jpg)');
+    $('.image').css('opacity', '.7');
+  }
+})/*
+.type('Our wallpaper, as of late, has fallen ill to a peculiar')
+.break()
+.type('species of mold.')
+.pause(3000)
+.break()
+.pause(500)
+.type('The mold is characterized by its')
+.break()
+.type('off-red color and oil-like appearance.')
+.pause(700)
+.break()
+.pause(200)
+.type('It pulses in response to touch.')
+.pause(5000)
+.empty()
+.pause(1000)
+.type('The date the mold appeared, though muddled,').type(' was the ')
+.pause(1000)
+.options({speed: 30})
+.type('2nd of October.')
+.pause(700)
+.options({speed: 60})
+.break()
+.pause(300)
+.type('(The date held no prior relevance.)')
+.pause(5000)
+.empty()
+.pause(1000)
+.type('While repuslive in visual appareance, there\'s something familiar to the spore\'s odor, not entirely unlike the aftermath of dishes left unwashed in the sink.')
+.pause(5000)
+.empty()
+.break()
+.pause(200)
+.type('Still, the kids')
+.pause(3000)
+.delete(4)
+.pause(1000)
+.type('discomfort such a grotesque scenario would is unfitting for a family such as ours to be living in. ')
+.pause(5000)
+.type('Thus...')
+.pause(5000)
+.empty()
+.type('Though requiring significant grease,')
+.break()
+.pause(100)
+.type('The only resolution is the complete removal of the walling from the household.')
+.pause(5000)
+.empty()
+.pause(100)
+.options({speed: 60})
+.type('though holding no prior relevance, to gray infected textile sewn with off-red veinery, some type of 1950s vintage kit, receeding ventillation into oxidized spores, contributional spreading to the pulsing prior, mathematical geometries obscured by growing fungus, kansasesque gray covered in complete circles, incomplete circles swirling pulsing blue liquid serrating clensing absestos calloused over off-red poppy printed walling then resetting, relevant, reverent, rectangulant')
+.type(' reclusant, in response to touch, to peculiar pulsing priors, founded whirring electric wirelike liquid scalding through rusting pipery, as expected, as disconnected circutry, as leaking pusslike, as dirt, as water, as ditry water streaks darker on the walls, spores fleurish kansasesque and serrating, as of late, I\'ve been ')
+.empty()
+
+.options({speed: 40})
+.type('IN THE')
+.pause(20)
+.empty()
+.pause(100)
+.type('OUT THE')
+.pause(20)
+.empty()
+.pause(100)
+.type('DYLA')
+.pause(50)
+.empty()
+.pause(100)
+.type('DYLAN')
+.pause(50)
+.empty()
+.pause(100)
+.type('HEROI')
+.pause(50)
+.empty()
+.pause(100)
+.type('OVER TH')
+.pause(50)
+.empty()
+.pause(100)
+.type('RECURRI')
+.pause(50)
+.empty()
+.pause(100)
+.type('BLUE BIR')
+.pause(50)
+.empty()
+.pause(100)
+.type('SOMEWH')
+.pause(50)
+.empty()
+.pause(100)
+.type('..I..')
+.pause(50)
+.empty()
+.pause(2000)*/
+.options({speed: 60})
+.type('Oh.')
+.pause(1000)
+.break()
+.break()
+.type(' It <em>spread</em>.');
+
+  
+  function finish() {
+    var a;
+    a = instance.isComplete();
+    while(a == false) {
+    a = instance.isComplete();
+
+    }
+    alert("It's everywhere.");
+  }
+
+/*
+
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.pause(5000)
+*/
+</script>
+</body>
+</html>
