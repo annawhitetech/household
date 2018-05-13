@@ -1,0 +1,48 @@
+.hatch {
+    background: url('https://i.stack.imgur.com/sIIwU.gif');
+    background-size: 500px;
+    text-shadow: none;
+    overflow: hidden;
+}
+
+body, html {
+    overflow: none;
+    width: 100%;
+    position: fixed;
+}
+
+#main.hatch {
+    animation-duration: 10s;
+}
+
+.light {
+    height: 100%;
+}
+
+
+.content {
+    height: 100%;
+}
+
+@keyframes AnimationName { 
+    0%{background-position:0px 0px}
+    100%{background-position:0px 0px}
+}
+
+.light {
+    background: transparent;
+    width: 100%;
+}
+
+#middle {
+    border-radius: 0px;
+    margin: auto;
+    opacity: .8;
+    height: 100%;
+    width: 900px;
+    background-image: url("static.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+}

@@ -4,310 +4,107 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Household</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>Household: Home</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
-  <script type="text/javascript" src="jquerytypewriter.js"></script>
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="home.css">
 
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Special+Elite');
-    * {
-      padding: 0px;
-      margin: 0px;
-      font-family: "Special Elite";
-      font-size: 15pt;
-      line-height: 1.3;
-      transition: all 1s linear;
-    }
-    body {
-      -webkit-animation: AnimationName 30s linear infinite;
--moz-animation: AnimationName 30s linear infinite;
-animation: AnimationName 30s linear infinite;
+<script>
+  $(document).ready(function() {
+    $( 'body' ).hide().fadeIn(2000);   
+    let counter = 0;
+    let name = "household";
 
-      background: url('mold.jpg');
-    }
+    $("#ddddd").focus();
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    100%{background-position:50% 100% }
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    100%{background-position:50% 100%}
-}
-@keyframes AnimationName { 
-    0%{background-position:50% 0%}
-    100%{background-position:50% 100%}
-}
-    .light, .hatchet {
-      background: rgba(255,255,255,1);
-      opacity: .4;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      transition: 60s all linear;
-      z-index: -1;
-    }
+    $("#ddddd").keydown(function (e) {
+      var k = e.keyCode || e.which;
+      console.log(e.which);
+      if ( k == 8 || k == 46) {
+        console.log("herte");
+        if (counter > 0)
+          counter--;
+        return true; // !!!
+      }
+    });
 
-    .image .mom {
-    position: absolute;
-    left: 225px;
-    top: 215px;
-    background: white;
-    width: 130px;
-    border: none;
-    transform: rotate(-4deg);
-    opacity: 0;
-    transition: all 2s linear;
-    height: auto;
-    }
+    $("#ddddd").keypress(function (e) {
 
-    .hatchet {
-      background: url('hatch.png');
-      opacity: 1;
-    }
-    .demo {
-      padding: 30px;
-      max-width: 650px;
-      margin-top: -200px;
+      $(this).val($(this).val() + name.charAt(counter));
+      if (counter <= name.length)
+        counter++;
+      if (counter-1 == name.length) {
+        $(this).val($(this).val() + name.charAt(counter));
+        alert("I missed you.");
+      }
+    return false;
+  });
 
-  text-shadow:
-   -1px -2px 0 #fff,  
-    1px -2px 0 #fff,
-    -1px 2px 0 #fff,
-     1px 2px 0 #fff;
-    }
+    $("#left").mouseenter(function () {
+      setCenter("Room 0")
+    });
 
-    .image {
-      position: fixed;
-      left: 0;
-      width: 1600px;
-      top: 0;
-      transition: 1s linear all;
-    }
+    $("#left").click(function () {
+      setCenter("")
+    //  alert("");
+    });
 
-    .trans .ti-container {
-      background: rgba(255,255,255,1);
-    }
-    .ti-container {
-      background: rgba(255,255,255,.0);
-      transition: 1s all linear;
-      padding: 3px 5px;
-      display: inline-block;
-    }
+    $("#left").mouseout(function () {
+      setCenter("")
+    });
 
-    .image img {
-      width: 100%;
-      height: 100%;
-      border-bottom: 1000px solid white;
-    }
 
-    .flex {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      text-align: center;
-      height: 100%;
-      width: 100%;
-      color: black;
-      transition: 1s linear all;
-    }
+    $("#right").mouseenter(function () {
+      setCenter("Room 1")
+    });
 
-</style>
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+    $("#right").click(function () {
+      setCenter("")
+   //   alert("");
+    });
+
+    $("#right").mouseout(function () {
+      setCenter("")
+    });
+
+   $("a").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $("#main").fadeOut(1000, redirectPage(linkLocation));      
+    });
+
+  });
+
+    function redirectPage(link) {
+        document.location.href= link;
+    }
+  function setCenter(str) {
+    $("#ddddd").val(str);
+  }
+</script>
 </head>
-
 <body>
-<div class="image">
-<div class="hatchet">
-
-</div> 
-  <div class="light">
-
-</div>  
-<img src="bgtrans.gif"/>
-
-<img class="mom" src="mom.png"/>
-</div>
-<div class="flex">
-  <div class="demo trans" id='element'>&shy;
+<audio src="music/room1.mp3" loop="true" autoplay hidden ></audio>
+ <div id="main" class="hatch rise">
+  <div class="side Aligner left" >
+    <a class="Aligner-item" id="left" href="room0.html"><img src="arrow-left.png"/></a>
+  </div>
+  <div class="side Aligner right">
+    <a class="Aligner-item"  id="right" href="room1.html"><img src="arrow-right.png"/></a>
+  </div>
+  <div class="Aligner">
+   <div id="middle" class="hatch fall Aligner-item center">
+    <div class="light">
+      <div class="content">
+        <input id="ddddd"  placeholder="" type="text" disabled/>
+      </div>
+    </div>
   </div>
 </div>
-  <script type="text/javascript">
 
-  var instance = new TypeIt('#element', {
-  speed: 60,
-  autoplay: true,
-  loop: false,
-  callback: function() { 
-    $('.hatchet').css('opacity', '.1');
-    $('.light').css('opacity', '.1');
-    $('.mom').css("opacity","1");
-    var instance2 = new TypeIt('#element', {
-        speed: 60,
-        autoplay: true,
-        loop: false,
-        callback: function() {
-          $('.mom').attr("src","mominnavy.png");
-          var instance4 = new TypeIt('#element', {
-          speed: 60,
-          autoplay: true,
-          loop: false,
-          callback: function() {
-            $('#element').removeClass('trans');
-            var instance3 = new TypeIt('#element', {
-              speed: 60,
-              autoplay: true,
-              loop: false,
-            }).type('..I..')
-              .pause(50)
-              .empty()
-              .pause(2000)
-              .options({speed: 60})
-              .type(' Oh.')
-              .pause(7000)
-              .break()
-              .pause(1000)
-              .break()
-              .pause(1000)
-              .type(' It <em>spread</em>.');
-              }
-          }).options({speed: 40})
-            .type('IN THE')
-            .pause(20)
-            .empty()
-            .pause(100)
-            .type('OUT THE')
-            .pause(20)
-            .empty()
-            .pause(100)
-            .type('DYLA')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('DYLAN')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('HEROI')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('OVER TH')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('RECURRI')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('BLUE BIR')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('SOMEWH')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('..I..')
-            .pause(50)
-            .empty()
-            .pause(100)
-            .type('..I..')
-            .pause(50)
-            .empty()
-            .pause(100);
-          }})
+</div>
 
-.type('In returning home from work, I inspect the condition of the mold and it\'s')
-.empty().pause(3000).options({speed: 60})
-        .type('though holding no prior relevance to gray infected textile sewn with off-red veinery, some type of 1950s vintage needle kit, receeding ventillation into oxidized spores, contributing to the spreading of the pulsing prior, mathematical geometries on wallpaper obscured by growing fungus, kansasesque gray covered in complete circles, incompleteness circles swirling pulsing blue liquid serrating clensing absestos calloused over off-red poppy print walling then resetting, relevant, reverent, rectangulant')
-        .type(' reclusant, in response to touch, to particular pulsing priors, founded stalling electric wirelike liquid scalding through rusted pipery, as expected, disconnected circutry leaks pusslike, as dirt, as water, as grease-darkened vertigo patterns, spores fleurish kansasesque and serrating, as of late, I\'ve been ')
-        .pause(200)
-        .empty();
-
-
-         
-      }
-      })
-.type('Our wallpaper, as of late, has fallen ill to a peculiar species')
-.break()
-.type(' of mold.')
-.pause(3000)
-.break()
-.pause(200)
-.break()
-.pause(500)
-.type('The mold is characterized by its off-red color and oil-like appearance')
-.pause(1000)
-.break()
-.pause(200)
-.break()
-.pause(200)
-.type('It pulses in response to touch.')
-.pause(5000)
-.empty()
-.pause(1000)
-.type('The date the mold appeared, though muddled,').type(' was the ')
-.pause(1000)
-.type('2nd of October.')
-.pause(700)
-.options({speed: 60})
-.break()
-.pause(200)
-.break()
-.pause(200)
-.type('(The date held no prior relevance.)')
-.pause(5000)
-.empty()
-.pause(1000)
-.type('While repulsive in visual appearance, there\'s something familiar to the spore\'s odor, not entirely unlike the aftermath of dishes left unwashed in the sink overnight.')
-.pause(5000)
-.empty()
-.pause(200)
-.type('Still, my s')
-.pause(1000)
-.delete(4)
-.pause(1000)
-.type('the discomfort such a grotesque scenario would bring is unfitting for a family such as ours to be living in. ')
-.pause(5000)
-.type('Thus,')
-.pause(700)
-.break()
-.pause(200)
-.break()
-.pause(200)
-.type('I have decided the only resolution is the complete removal of the wallpaper from the household.')
-.pause(3000)
-.empty();
-
-
-
-  
-
-/*
-
-.type('DYLA')
-.empty()
-.type('DYLA')
-.empty()
-.type('DYLA')
-.empty()
-.type('DYLA')
-.empty()
-.type('DYLA')
-.empty()
-.type('DYLA')
-.empty()
-.pause(5000)
-*/
-</script>
 </body>
 </html>

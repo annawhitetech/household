@@ -1,0 +1,183 @@
+
+  @import url('https://fonts.googleapis.com/css?family=Special+Elite');
+  * {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Special Elite";
+    transition: all .5 linear;
+    
+  }
+
+  #main.hatch {
+    animation-duration: 40s;
+    background-color: white;
+  }
+
+  #middle.hatch {
+    animation-duration: 90s;
+  }
+
+  .hatch {
+    transition: all 60s linear;
+    background: url('hatch.png');
+    background-size: 800px;
+    text-shadow:
+    -1px -2px 0 #fff,  
+    1px -2px 0 #fff,
+    -1px 2px 0 #fff,
+    1px 2px 0 #fff;
+    -webkit-animation: AnimationName 30s linear infinite;
+    -moz-animation: AnimationName 30s linear infinite;
+    animation: AnimationName 30s linear infinite;
+  }
+
+  .fall {
+    animation-direction: reverse;
+    animation-direction: alternate-reverse;
+  }
+
+  .rise {
+    animation-direction: normal;
+    animation-direction: alternate;
+  }
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:50% 0px}
+    100%{background-position:50% -800px }
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:50% 0px}
+    100%{background-position:50% -800px}
+  }
+  @keyframes AnimationName { 
+    0%{background-position:50% 0px}
+    100%{background-position:50% -800px}
+  }
+
+  #main {
+    height: 100%;
+    width: 100%;
+  }
+
+  body{
+    font-size: 18px;
+    height:100vh;
+    overflow: none;
+    background: black;
+  }
+  input {
+    font-size: 1.1em;
+    background: white;
+    border: 1px solid gray;
+  }
+
+  input[type="button"] {
+    padding: 10px 7px;
+  }
+
+  input[type="text"] {
+    background: transparent;
+    border: none;
+    padding:5px;
+    text-align: center;
+    font-size: 1.2em;
+    outline: none !important;
+  }
+
+  h1 {
+    font-weight: normal;
+    line-height: 1.3;
+    font-size: 1em;
+  }
+  .side.Aligner a {
+    display: block;
+  }
+
+  .side.Aligner a img {
+    width: 50px;
+  }
+
+  .side.Aligner {
+    position: fixed;
+  }
+  .side.Aligner.left {
+    left: 0px;
+    z-index: 1;
+  }
+
+  .side.Aligner.left img{
+    padding-right: 50px;
+    padding-right: 10px;
+    padding-top: 70px;
+    padding-bottom: 5px;
+  }
+
+  .side.Aligner.right {
+    right: 0px;
+    z-index: 1;
+  }
+
+  .side.Aligner img {
+    cursor: url('extractorpoint.png'), auto;
+  }
+
+  .side.Aligner.right img{
+    padding-left: 50px;
+    padding-top: 70px;
+    padding-bottom: 0px;
+  }
+
+  #middle {
+    border-radius: 100%;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  #middle input {
+    width: 100%;
+  }
+
+  #start {
+    margin-top: -40px;
+  }
+
+  .Aligner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Aligner-item {
+  }
+
+  .Aligner-item--top {
+    align-self: flex-start;
+  }
+
+  .Aligner-item--bottom {
+    align-self: flex-end;
+  }
+  .hidden {
+    opacity: 0;
+    position: absolute;
+  }
+  .light {
+    background: rgba(255,255,255,.5);
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+  }
+  .light .content {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+* {
+    cursor: url('extractor.png'), auto;
+  }
