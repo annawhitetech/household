@@ -16,28 +16,7 @@
 
 <script>
   $(document).ready(function() {
-    $( 'body' ).hide().fadeIn(1000);   
-
-    $("#left").mouseenter(function () {
-      setCenter("Home")
-    });
-    $("#left").click(function () {
-      setCenter("")
-     // alert(":)");
-    });
-
-    $("#left").mouseout(function () {
-      setCenter("")
-    });
-
-
-    $("#right").mouseenter(function () {
-      setCenter("Room 2")
-    });
-
-    $("#right").mouseout(function () {
-      setCenter("")
-    });
+    $( 'body' ).hide().fadeIn(1000);
   });
 
   function setCenter(str) {
@@ -46,7 +25,6 @@
 </script>
 </head>
 <body>
-<audio src="music/room1.mp3" loop="true" autoplay hidden ></audio>
 
  <div id="main" class="hatch rise">
   <div class="side Aligner left" >

@@ -12,104 +12,79 @@
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="room2.css">
+  <style>
+  body {
+    height: 100vh;
+    position: fixed;
+  }
+  .content {
+    display: inline-flex;
+    /*background-image: url('img/longdream.jpg');
+    background-position: 100%;*/
 
+  }
+  .content, .content img {
+    height: 100%;
+  }
+  .content img {
+    margin: 0 auto;
+    display: inline-block;
+  }
+  * {
+    font-family: "Calibri";
+  }
+  .content .text {
+    padding: 20px;
+    background: white;
+    overflow: scroll;
+  }
+  .content .text p{
+    display: inline-block;
+    color: black;
+    font-family: "Calibri";
+    padding: 10px 0px;
+    font-size: 16px;
+    line-height: 1;
+    text-shadow: none;
+  }
+  .content .text p, .content .text h2 {
+
+  }
+</style>
 <script>
   $(document).ready(function() {
-    $( 'body' ).hide().fadeIn(1000);   
-
-    $("#left").mouseenter(function () {
-      setCenter("Home")
-    });
-    $("#left").click(function () {
-      setCenter("")
-     // alert(":)");
-    });
-
-    $("#left").mouseout(function () {
-      setCenter("")
-    });
-
-
-    $("#right").mouseenter(function () {
-      setCenter("Room 2")
-    });
-
-    $("#right").mouseout(function () {
-      setCenter("")
-    });
-
-    var img=$('#image');
-    $(document).ready(function(e) {
-      $(document).mousemove(function(e) {
-        var positionLeft = e.clientX - img.width()/2;
-        var positionTop = e.clientY - img.height()/2;
-        img.css({'position': 'absolute', 'left': positionLeft, 'top': positionTop});
-      });
-    });
+    $( 'body' ).hide().fadeIn(1000);
   });
 
   function setCenter(str) {
     $("#ddddd").val(str);
   }
-
 </script>
 </head>
 <body>
-<audio src="music/room1.mp3" loop="true" autoplay hidden ></audio>
- <div id="main" class="hatch rise">
+
+ <div id="main">
   <div class="side Aligner left" >
-    <a class="Aligner-item" id="left" href="room1.html"><img src="arrow-left.png"/></a>
+    <a class="Aligner-item" id="left" href="room2.html"><img src="arrow-left.png"/></a>
   </div>
   <div class="side Aligner right">
-    <a class="Aligner-item"  id="right" href="room2.html"><img src="arrow-right.png"/></a>
+    <a class="Aligner-item"  id="right" href="room4.html"><img src="arrow-right.png"/></a>
   </div>
-  <div class="Aligner">
-   <div id="middle" class="Aligner-item center">
-    <div class="light">
-      <div id="image" style="background: white; width: 1000px; height: 100px;"></div>
-      <div class="content" style="padding-top: 30px"><p>
-        3/24 - During my favourite sitcom, I noticed an unpalatable hissing in the audio. I'll ask the husband about it when he gets home. He's out now.
-</p><p>
-3/27 - It seems the hissing grows more violent with each channel. By three-twenty-four, the actor's voices were indiscernible. 
-</p><p>
-
-4/8 -  After a week of listening, I've discerned four consistent syllables: Nn, tt, mm, and ou. It also appears that the hissing acts independently of the television's volume--I tried to adjust the knob, and it fell off.
-</p><p>
-
-4/1 - Today, a tornado hit our home. The husband was out.
-</p><p>
-
-6/3 - Channel three-twenty-four has found its way into my dreams. I woke up on the couch parallel to the television this morning. The hissing is definitively clearer in my dreams. I heard a t on the end of the ou and and an i somewhere in the nn. My son calls, also. He plans to visit me soon.
-</p><p>
-
-6/24 - My son is coming at the end of the month. It's possible I haven't slept. 
-</p><p>
-
-6/31 - The static has started pouring from the tv. I can see the gray and white rectangles scatter on the carpet. Attempting to vaccum them results only in an indiscernable hissing from the vaccum cleaner. Nn. Tt. Ou.
-</p><p>
-
-7/1 - My son visited. He asks immediately about the hissing from the television and observes a fallen sattelite in our backyard. He tells me that must be the reason for the hiss. I tell him about tt and mm. He looks at me sadly. (The husband was out.) My son fixed the sattelite before he left. He turned the station to my favourite sitcom, and told me something I appreciated.
-</p><p>
-
-7/18 - I lied to my son. Those weeks ago, he'd laughed at the sitcom, and told me something, but when he spoke I heard only an unpalatable hissing. The sattelite is still laying in grass of our yard. 
-</p><p>
-
-7/32 - The static has started pouring from the tv. I can see the gray and white rectangles scatter on the carpet. Attempting to vaccum the static results only in an indiscernable hissing from the vaccum cleaner. When I returned to the couch, the television was on channel three-two-four again.
-</p><p>
-
-7/46 - My son visits, again. He steps over the static on the carpet. Before leaves, he hugs me, and the white and gray rectangles on his arms cut slivers into  back. The pain hisses. 
-</p><p>
-
-13/56 - Despite the passage of several months, the wounds have yet to close. After falling asleep on the couch, I awoke with a remote in my hand and an incompleted channel number typed into the television screen. 
-</p><p>
-
-42/3 - I was able to at last change the station from three-two-four. Unfortunately, when I try to press the button, my thumb turned into gray rectangles. My son calls. He should be coming to visit soon. There’s a new episode of his favourite sit-com on. He asks again about channel three hundred and four, but the static blurs his voice into nondescript syllables. He reaches his arm through the receivere his gray and white bled into mine and slice my jaw off my face. It falls to the carpet and succumbs to static. I’ll ask the husband to fix it when he gets in. He’s out now. (There'll be another tornado tomorrow.)
-</p>
-      </div>
+  <div class="content">
+    <img src="img/longdream.jpg" />
+    <div class="text"><h2>3. Long Dream</h2>
+      <p>
+        ddddddddddddd likened himself to THE SCARECROW. 
+      </p><p>
+      I read about a patient with disordered dreaming. Twenty-six months to a night's sleep. Then twenty-six centuries, then longer still. By his penultimate rest, the patient's body has undergone the next four million years of human evolution: his straw skin, his pulsing orb eyes, his face swollen beyond the elasticity of the human skull. a sleep that stays. In the morning, NURSE opens a window. The innocent breeze turns the Long Dreamer’s crystallized body to dust.
+      </p><p>
+        THE SCARECROW, dddddddddddd claimed, knew “All that had and all that would.” then added that such knowledge was too overwhelming. It couldn’t be processed in the elasticity of human understanding. Thus, THE SCARECROW, who knew everything, could know nothing.
+      </p><p>
+        Later, as an insult, dddddddddddddddd likened me to TOTO. I found it more appropriate than insulting. TOTO was the only one who didn’t see Oz in color.
+      </p><p>
+      (Under microscopes, the doctors found traces of an unidentifiable stimulant in the dreamer’s particles.)</p>
     </div>
   </div>
-</div>
 </div>
 
 </body>
