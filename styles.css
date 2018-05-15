@@ -83,6 +83,7 @@
   }
   .side.Aligner a {
     display: block;
+    z-index: 1;
   }
 
   .side.Aligner a img {
@@ -91,13 +92,16 @@
 
   .side.Aligner {
     position: fixed;
+    z-index: 1;
   }
   .side.Aligner.left {
     left: 0px;
+    z-index: 1;
   }
 
   .side.Aligner.right {
     right: 0px;
+    z-index: 1;
   }
 
   #middle {

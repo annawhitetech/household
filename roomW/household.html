@@ -11,7 +11,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
   <script type="text/javascript" src="jquerytypewriter.js"></script>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="../styles.css">
 
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
@@ -23,24 +23,25 @@
       line-height: 1.3;
       transition: all 1s linear;
     }
-    body {
-      -webkit-animation: AnimationName 30s linear infinite;
-      -moz-animation: AnimationName 30s linear infinite;
-      animation: AnimationName 30s linear infinite;
-      background: url('mold.jpg');
+    body #main {
+      height: 100%;
+      width: 100%;
+      -webkit-animation: AnimationName 40s linear infinite;
+      -moz-animation: AnimationName 40s linear infinite;
+      animation: AnimationName 40s linear infinite;
     }
 
     @-webkit-keyframes AnimationName {
         0%{background-position:50% 0%}
-        100%{background-position:50% 100% }
+        100%{background-position:50% 200% }
     }
     @-moz-keyframes AnimationName {
         0%{background-position:50% 0%}
-        100%{background-position:50% 100%}
+        100%{background-position:50% 200%}
     }
     @keyframes AnimationName { 
         0%{background-position:50% 0%}
-        100%{background-position:50% 100%}
+        100%{background-position:50% 200%}
     }
 
     .light, .hatchet {
@@ -125,6 +126,14 @@
 </head>
 
 <body>
+  <div id="main">
+  <div class="side Aligner left" >
+    <a class="Aligner-item" id="left" href="../room5.html"><img src="../arrow-left.png"/></a>
+  </div>
+  <div class="side Aligner right">
+    <a class="Aligner-item"  id="right" href="../room7.html"><img src="../arrow-right.png"/></a>
+  </div>
+
 <div class="image">
 <div class="hatchet">
 
@@ -140,13 +149,19 @@
   <div class="demo trans" id='element'>&shy;
   </div>
 </div>
+</div>
   <script type="text/javascript">
+
+  $(document).ready(function() {
+    $( 'body' ).hide().fadeIn(1000);
+
 
   var instance = new TypeIt('#element', {
   speed: 60,
   autoplay: true,
   loop: false,
   callback: function() { 
+    $('#main').css("background","url('mold.jpg')");
     $('.hatchet').css('opacity', '.1');
     $('.light').css('opacity', '.1');
     $('.mom').css("opacity","1");
@@ -177,7 +192,7 @@
               .pause(1000)
               .break()
               .pause(1000)
-              .type(' It <em>spread</em>.');
+              .type(' He <em>spread</em>.');
               }
           }).options({speed: 40})
             .type('IN THE')
@@ -228,8 +243,8 @@
 
 .type('In returning home from work, I inspect the condition of the mold and it\'s')
 .empty().pause(3000).options({speed: 60})
-        .type('though holding no prior relevance to gray infected textile sewn with off-red veinery, some type of 1950s vintage needle kit, receeding ventillation into oxidized spores, contributing to the spreading of the pulsing prior, mathematical geometries on wallpaper obscured by growing fungus, kansasesque gray covered in complete circles, incompleteness circles swirling pulsing blue liquid serrating clensing absestos calloused over off-red poppy print walling then resetting, relevant, reverent, rectangulant')
-        .type(' reclusant, in response to touch, to particular pulsing priors, founded stalling electric wirelike liquid scalding through rusted pipery, as expected, disconnected circutry leaks pusslike, as dirt, as water, as grease-darkened vertigo patterns, spores fleurish kansasesque and serrating, as of late, I\'ve been ')
+        .type('though holding no prior relevance to gray infected textile sewn with off-red veinery, some type of 1950s vintage needle kit, receeding ventillation into oxidized spores, contributing to the spread of the pulsing prior, mathematical geometries on wallpaper obscured by growing fungus, kansasesque gray covered in complete circles, incompleteness circles swirling pulsing blue liquid serrating clensing absestos calloused over off-red poppy print walling then resetting, relevant, reverent, rectangulant,')
+        .type(' reclusant, in response to touch, to particular pulsing priors founded stalling electric wirelike liquid scalding through rusted pipery, as expected disconnected circutry leaks pusslike, as dirt, as water, as grease-darkened vertigo patterns, spores fleurish kansasesque and serrating, as of late, I\'ve been ')
         .pause(200)
         .empty();
 
@@ -245,7 +260,7 @@
 .pause(200)
 .break()
 .pause(500)
-.type('The mold is characterized by its off-red color and oil-like appearance')
+.type('The mold is characterized by its off-red color and oil-like appearance.')
 .pause(1000)
 .break()
 .pause(200)
@@ -272,7 +287,7 @@
 .pause(1000)
 .delete(4)
 .pause(1000)
-.type('the discomfort such a grotesque scenario would bring is unfitting for a family such as ours to be living in. ')
+.type('living skinned in a grotesque fungus is unfitting for a family such as ours to be living in. ')
 .pause(5000)
 .type('Thus,')
 .pause(700)
@@ -280,10 +295,11 @@
 .pause(200)
 .break()
 .pause(200)
-.type('I have decided the only resolution is the complete removal of the wallpaper from the household.')
+.type('The only resolution is the complete removal of the walling from the household.')
 .pause(3000)
 .empty();
 
+  });
 /*
 .type('DYLA')
 .empty()
