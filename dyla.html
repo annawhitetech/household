@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Household</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="room1.css">
+  <style type="text/css">
+  body {
+    ;
+  }
+  #main {
+    background-color: white;
+    background-image: url('img/hisname.png');
+    background-size: 600px;
+  }
+ #middle {
+  background: white;
+    height: 100%;
+    width: 100%;
+ }
+  #middle .light {
+    background-image: url('img/overdose.png');
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-position: center;
+    background-size: contain;
+  }
+
+  #middle.hatch {
+    background-color: red;
+  }
+  
+</style>
+<script>
+  $(document).ready(function() {
+    $( 'body' ).hide().fadeIn(1000);
+  });
+
+  function setCenter(str) {
+    $("#ddddd").val(str);
+  }
+</script>
+</head>
+<body>
+
+ <div id="main">
+  <div class="side Aligner left" >
+    <a class="Aligner-item" id="left" href="room3.html"><img src="arrow-left.png"/></a>
+  </div>
+  <div class="side Aligner right">
+    <a class="Aligner-item"  id="right" href="room5.html"><img src="arrow-right.png"/></a>
+  </div>
+  <div class="Aligner">
+    <div id="middle" class="Aligner-item center">
+      <div class="light">
+        <div class="content">
+          <input id="ddddd"  placeholder="" type="text" disabled/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
