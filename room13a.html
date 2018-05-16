@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Household</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="home.css">
+<style type="text/css">
+  .hatch {
+    background: white;
+  }
+
+  #main.hatch {
+    animation-duration: 0s;
+  }
+
+  @keyframes AnimationName { 
+    0%{background-size:800px 800px}
+    100%{background-size:4px 4px}
+  }
+
+  .light {
+    background: transparent;
+    width: 100%;
+  }
+
+  #middle {
+    border-radius: 0px;
+    margin: auto;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/dylanb.png");
+    background-repeat: no-repeat;
+    background-size: 700px;
+    text-align: center;
+    background-position: center;
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    $( 'body' ).hide().fadeIn(1000);
+  });
+
+  function setCenter(str) {
+    $("#ddddd").val(str);
+  }
+</script>
+</head>
+<body>
+
+ <div id="main" class="hatch rise">
+  <div class="side Aligner left" >
+    <a class="Aligner-item" id="left" href="room12.html"><img src="arrow-left.png"/></a>
+  </div>
+  <div class="side Aligner right">
+    <a class="Aligner-item"  id="right" href="room13b.html"><img src="arrow-right.png"/></a>
+  </div>
+  <div class="Aligner">
+   <div id="middle" class="Aligner-item center">
+    <div class="light">
+      <div class="content">
+        <input id="ddddd"  placeholder="" type="text" disabled/>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
