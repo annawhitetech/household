@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Household</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="home.css">
+<style type="text/css">
+  .hatch {
+    background: white;
+    min-height: 1100px;
+  }
+
+  #main.hatch {
+    animation-duration: 0s;
+  }
+
+  @keyframes AnimationName { 
+    0%{background-size:800px 800px}
+    100%{background-size:4px 4px}
+  }
+
+  .light {
+    background: transparent;
+    width: 100%;
+  }
+
+  #main.hatch {
+
+     background-color: rgb(14, 15, 38);
+  }
+
+  #middle {
+    border-radius: 0px;
+    margin: auto;
+    opacity: 1;
+    width: 900px;
+    max-width: 100%;
+    height: 100%;
+    background-image: url("img/francis.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+     background-color: rgb(14, 15, 38);
+    text-align: center;
+    background-position: top;
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    $( 'body' ).hide().fadeIn(1000, function() {
+    alert("[I was six.]");
+    });
+  });
+</script>
+</head>
+<body>
+
+ <div id="main" class="hatch rise" stlye="text-align: center">
+        <audio controls="controls" style="position: fixed; left: 45%; min-width: 133px; width: 10%; margin: 0 auto;">
+        <source src="music/francis.mp3" type="audio/mp3">
+          Your browser does not support the <code>audio</code> element. 
+        </audio>
+  <div class="side Aligner left" >
+    <a class="Aligner-item" id="left" href="room11.html"><img src="arrow-left-light.png"/></a>
+  </div>
+  <div class="side Aligner right">
+    <a class="Aligner-item"  id="right" href="room12.html"><img src="arrow-right-light.png"/></a>
+  </div>
+  <div class="Aligner">
+   <div id="middle" class="Aligner-item center">
+    <div class="light">
+      <div class="content">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
