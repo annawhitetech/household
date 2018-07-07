@@ -1,0 +1,301 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Household</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typeit@5.3.0/dist/typeit.min.js"></script>
+  <script type="text/javascript" src="jquerytypewriter.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+    * {
+      padding: 0px;
+      margin: 0px;
+      font-family: "Special Elite";
+      font-size: 15pt;
+      line-height: 1.3;
+      transition: all 1s linear;
+    }
+    body #main {
+      height: 100%;
+      width: 100%;
+      -webkit-animation: AnimationName 40s linear infinite;
+      -moz-animation: AnimationName 40s linear infinite;
+      animation: AnimationName 40s linear infinite;
+    }
+    @-webkit-keyframes AnimationName {
+        0%{background-position:50% 0%}
+        100%{background-position:50% 200% }
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:50% 0%}
+        100%{background-position:50% 200%}
+    }
+    @keyframes AnimationName { 
+        0%{background-position:50% 0%}
+        100%{background-position:50% 200%}
+    }
+    .light, .hatchet {
+      background: rgba(255,255,255,1);
+      opacity: .4;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transition: 60s all linear;
+      z-index: -1;
+    }
+    .image .mom {
+    position: absolute;
+    left: 225px;
+    top: 215px;
+    background: white;
+    width: 130px;
+    border: none;
+    transform: rotate(-4deg);
+    opacity: 0;
+    transition: all 2s linear;
+    height: auto;
+    }
+    .hatchet {
+      background: url('hatch.png');
+      opacity: 1;
+    }
+    .demo {
+      padding: 30px;
+      max-width: 650px;
+      margin-top: -200px;
+  text-shadow:
+   -1px -2px 0 #fff,  
+    1px -2px 0 #fff,
+    -1px 2px 0 #fff,
+     1px 2px 0 #fff;
+    }
+    .image {
+      position: fixed;
+      left: 0;
+      width: 1600px;
+      top: 0;
+      transition: 1s linear all;
+    }
+    .trans .ti-container {
+      background: rgba(255,255,255,1);
+    }
+    .ti-container {
+      background: rgba(255,255,255,.0);
+      transition: 1s all linear;
+      padding: 3px 5px;
+      display: inline-block;
+    }
+    .image img {
+      width: 100%;
+      height: 100%;
+      border-bottom: 1000px solid white;
+    }
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      color: black;
+      transition: 1s linear all;
+    }
+</style>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="main">
+  <div class="side Aligner left" ><a class="Aligner-item" id="left" href="../room5.html"><img src="../arrow-left.png"/></a>
+  </div>
+  <div class="side Aligner right">  <a class="Aligner-item"  id="right" href="../room7.html"><img src="../arrow-right.png"/></a>
+  </div>
+
+<div class="image">
+<div class="hatchet">
+
+</div> 
+  <div class="light">
+
+</div>  
+<img src="bgtrans.gif"/>
+
+<img class="mom" src="mom.png"/>
+</div>
+<div class="flex">
+  <div class="demo trans" id='element'>&shy;
+  </div>
+</div>
+</div>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $( 'body' ).hide().fadeIn(1000);
+  var instance = new TypeIt('#element', {
+  speed: 60,
+  autoplay: true,
+  loop: false,
+  callback: function() { 
+    $('#main').css("background","url('mold.jpg')");
+    $('.hatchet').css('opacity', '.1');
+    $('.light').css('opacity', '.1');
+    $('.mom').css("opacity","1");
+    var instance2 = new TypeIt('#element', {
+        speed: 60,
+        autoplay: true,
+        loop: false,
+        callback: function() {
+          $('.mom').attr("src","mominnavy.png");
+          var instance4 = new TypeIt('#element', {
+          speed: 60,
+          autoplay: true,
+          loop: false,
+          callback: function() {
+            $('#element').removeClass('trans');
+            var instance3 = new TypeIt('#element', {
+              speed: 60,
+              autoplay: true,
+              loop: false,
+            }).type('..I..')
+              .pause(50)
+              .empty()
+              .pause(2000)
+              .options({speed: 60})
+              .type(' Oh.')
+              .pause(7000)
+              .break()
+              .pause(1000)
+              .break()
+              .pause(1000)
+              .type(' He <em>spread</em>.');
+              }
+          }).options({speed: 40})
+            .type('IN THE')
+            .pause(20)
+            .empty()
+            .pause(100)
+            .type('OUT THE')
+            .pause(20)
+            .empty()
+            .pause(100)
+            .type('DYLA')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('DYLAN')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('HEROI')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('OVER TH')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('RECURRI')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('BLUE BIR')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('SOMEWH')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('..I..')
+            .pause(50)
+            .empty()
+            .pause(100)
+            .type('..I..')
+            .pause(50)
+            .empty()
+            .pause(100);
+          }})
+.type('In returning home from work, I inspect the condition of the mold and it\'s')
+.empty().pause(3000).options({speed: 60})
+        .type('though holding no prior relevance to gray infected textile sewn with off-red veinery, some type of 1950s vintage needle kit, receding ventilation into oxidized spores, contributing to the spread of the pulsing prior, mathematical geometries on wallpaper obscured by growing fungus, kansasesque gray covered in complete circles, incompleteness circles swirling pulsing blue liquid serrating cleansing asbestos calloused over off-red poppy print walling then resetting, relevant, reverent, rectangulant,')
+        .type(' reclusant, in response to touch, to particular pulsing priors founded stalling electric wirelike liquid scalding through rusted pipery, as expected disconnected circuits leaks pusslike, as dirt, as water, as grease-darkened vertigo patterns, spores fleurish kansasesque and serrating, as of late, I\'ve been ')
+        .pause(200)
+        .empty();
+         
+      }
+      })
+.type('Our wallpaper, as of late, has fallen ill to a peculiar species')
+.break()
+.type(' of mold.')
+.pause(3000)
+.break()
+.pause(200)
+.break()
+.pause(500)
+.type('The mold is characterized by its off-red color and oil-like appearance.')
+.pause(1000)
+.break()
+.pause(200)
+.break()
+.pause(200)
+.type('It pulses in response to touch.')
+.pause(5000)
+.empty()
+.pause(1000)
+.type('The date the mold appeared, though muddled,').type(' was the ')
+.pause(1000)
+.type('2nd of October.')
+.pause(700)
+.options({speed: 60})
+.break()
+.pause(200)
+.break()
+.pause(200)
+.type('(The date held no prior relevance.)')
+.pause(5000)
+.empty()
+.pause(200)
+.type('Still, my s')
+.pause(1000)
+.delete(4)
+.pause(1000)
+.type('living all but skinned in such a grotesque fungus is unfitting for a family as ours.')
+.pause(5000)
+.type('Thus,')
+.pause(700)
+.break()
+.pause(200)
+.break()
+.pause(200)
+.type('I have decided, the only resolution is the complete removal of the wallpaper from the household.')
+.pause(3000)
+.empty();
+  });
+/*
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.type('DYLA')
+.empty()
+.pause(5000)
+*/
+</script>
+</body>
+</html>
